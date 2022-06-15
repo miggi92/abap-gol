@@ -34,31 +34,31 @@ CLASS ltcl_gol_grid IMPLEMENTATION.
 
   METHOD create_grid.
     DATA:
-            lo_table TYPE REF TO data.
+      lo_table TYPE REF TO data.
     FIELD-SYMBOLS:
     <lt_table> TYPE table.
 
     lo_table = mo_instance->get_grid_table( ).
-    cl_aunit_assert=>assert_bound( act = lo_table ).
+    cl_abap_unit_assert=>assert_bound( act = lo_table ).
 
   ENDMETHOD.
 
   METHOD row_number.
     DATA:
-                lo_table TYPE REF TO data.
+      lo_table TYPE REF TO data.
 
     FIELD-SYMBOLS:
     <lt_table> TYPE table.
 
     lo_table = mo_instance->get_grid_table( ).
-    cl_aunit_assert=>assert_bound(
+    cl_abap_unit_assert=>assert_bound(
         act     = lo_table                 " Reference Variable to Be Checked
-        quit    = cl_aunit_assert=>no ).
+        quit    = if_aunit_constants=>no ).
 
     ASSIGN lo_table->* TO <lt_table>.
 
     " checking row number
-    cl_aunit_assert=>assert_equals(
+    cl_abap_unit_assert=>assert_equals(
         exp     = 5                 " Data Object with Expected Type
         act     = lines( <lt_table> ) ).
   ENDMETHOD.
@@ -74,9 +74,9 @@ CLASS ltcl_gol_grid IMPLEMENTATION.
     <lt_table> TYPE table.
 
     lo_table = mo_instance->get_grid_table( ).
-    cl_aunit_assert=>assert_bound(
+    cl_abap_unit_assert=>assert_bound(
         act     = lo_table                 " Reference Variable to Be Checked
-        quit    = cl_aunit_assert=>no ).
+        quit    = if_aunit_constants=>no ).
 
     lo_rtti_table ?= cl_abap_tabledescr=>describe_by_data_ref( lo_table ).
     lo_structure  ?= lo_rtti_table->get_table_line_type( ).
@@ -84,7 +84,7 @@ CLASS ltcl_gol_grid IMPLEMENTATION.
 
 
     " checking col number
-    cl_aunit_assert=>assert_equals(
+    cl_abap_unit_assert=>assert_equals(
         exp     = 5                 " Data Object with Expected Type
         act     = lines( lt_components ) ).
   ENDMETHOD.
