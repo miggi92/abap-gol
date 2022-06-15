@@ -7,12 +7,12 @@ CLASS zcl_gol_grid DEFINITION
     METHODS:
       "! <p class="shorttext synchronized" lang="en">Constructor</p>
       "!
-      "! @parameter i_rows | <p class="shorttext synchronized" lang="en">Number of rows for the grid</p>
-      "! @parameter i_cols | <p class="shorttext synchronized" lang="en">Number of columns for the grid</p>
+      "! @parameter iv_rows | <p class="shorttext synchronized" lang="en">Number of rows for the grid</p>
+      "! @parameter iv_cols | <p class="shorttext synchronized" lang="en">Number of columns for the grid</p>
       constructor
         IMPORTING
-          i_rows TYPE i
-          i_cols TYPE i,
+          iv_rows TYPE i
+          iv_cols TYPE i,
       "! <p class="shorttext synchronized" lang="en">Get generated grid</p>
       "!
       "! @parameter ro_grid_table | <p class="shorttext synchronized" lang="en">Grid table</p>
@@ -36,8 +36,8 @@ ENDCLASS.
 CLASS zcl_gol_grid IMPLEMENTATION.
 
   METHOD constructor.
-    mv_rows = i_rows.
-    mv_cols = i_cols.
+    mv_rows = iv_rows.
+    mv_cols = iv_cols.
   ENDMETHOD.
 
   METHOD build_grid.
@@ -46,10 +46,11 @@ CLASS zcl_gol_grid IMPLEMENTATION.
           lo_table                TYPE REF TO cl_abap_tabledescr.
 
     FIELD-SYMBOLS:
-    <lt_grid> TYPE table.
+    <lt_grid> TYPE table,
+    <ls_struct_comp> LIKE LINE OF lt_structure_components.
 
     DO mv_cols TIMES.
-      APPEND INITIAL LINE TO lt_structure_components ASSIGNING FIELD-SYMBOL(<ls_struct_comp>).
+      APPEND INITIAL LINE TO lt_structure_components ASSIGNING <ls_struct_comp>.
       <ls_struct_comp>-name = |COL_{ sy-index }|.
       <ls_struct_comp>-type ?= cl_abap_typedescr=>describe_by_data( abap_true ).
     ENDDO.
@@ -67,7 +68,7 @@ CLASS zcl_gol_grid IMPLEMENTATION.
 
   METHOD get_grid_table.
     IF mo_grid_table IS NOT BOUND.
-      me->build_grid( ).
+      build_grid( ).
     ENDIF.
     ro_grid_table = mo_grid_table.
   ENDMETHOD.
