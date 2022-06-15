@@ -35,9 +35,6 @@ CLASS ltcl_gol_grid IMPLEMENTATION.
   METHOD create_grid.
     DATA:
       lo_table TYPE REF TO data.
-    FIELD-SYMBOLS:
-    <lt_table> TYPE table.
-
     lo_table = mo_instance->get_grid_table( ).
     cl_abap_unit_assert=>assert_bound( act = lo_table ).
 
@@ -69,9 +66,6 @@ CLASS ltcl_gol_grid IMPLEMENTATION.
       lo_rtti_table TYPE REF TO cl_abap_tabledescr,
       lo_structure  TYPE REF TO cl_abap_structdescr,
       lt_components TYPE abap_component_tab.
-
-    FIELD-SYMBOLS:
-    <lt_table> TYPE table.
 
     lo_table = mo_instance->get_grid_table( ).
     cl_abap_unit_assert=>assert_bound(
