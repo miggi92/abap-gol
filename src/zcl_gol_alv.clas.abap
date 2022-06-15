@@ -7,6 +7,7 @@ CLASS zcl_gol_alv DEFINITION
   PUBLIC SECTION.
   PROTECTED SECTION.
   PRIVATE SECTION.
+    DATA: mo_salv TYPE REF TO cl_salv_table.
 ENDCLASS.
 
 
