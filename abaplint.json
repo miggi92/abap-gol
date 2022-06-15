@@ -14,7 +14,7 @@
   ],
   "syntax": {
     "version": "v702",
-    "errorNamespace": "^(Z|Y|LT?CL_|TY_|LIF_|.*ABAPGIT)",
+    "errorNamespace": "^(Z|Y|LT?CL_|TY_|LIF_|.*GOL)",
     "globalConstants": [
       "abap_func_exporting",
       "abap_func_tables",
@@ -111,11 +111,30 @@
     "line_break_multiple_parameters": true,
     "unknown_types": true,
     "forbidden_void_type": {
-      "check": ["^stringtab$", "^SYCHAR01$", "^char2$", "^char20$", "^int4$", "^SYREPID$",
-        "^flag$", "^char12$", "^char10$", "^char70$", "^char4$", "^sydatum$", "^syuzeit$",
-        "^syst_title$", "^sychar70$", "^char30$", "^char50$",
-        "^numc2$", "^sap_bool$", "^SYCHAR10$", "^sylangu$",
-        "^cl_blue_wb_utility$", "^boole_d$",
+      "check": [
+        "^stringtab$",
+        "^SYCHAR01$",
+        "^char2$",
+        "^char20$",
+        "^int4$",
+        "^SYREPID$",
+        "^flag$",
+        "^char12$",
+        "^char10$",
+        "^char70$",
+        "^char4$",
+        "^sydatum$",
+        "^syuzeit$",
+        "^syst_title$",
+        "^sychar70$",
+        "^char30$",
+        "^char50$",
+        "^numc2$",
+        "^sap_bool$",
+        "^SYCHAR10$",
+        "^sylangu$",
+        "^cl_blue_wb_utility$",
+        "^boole_d$",
         "^cl_srvd_wb_object_data$",
         "^cl_wb_object_operator_factory$",
         "^cx_wb_object_operation_error$",
@@ -167,15 +186,7 @@
     "check_ddic": true,
     "check_include": true,
     "allowed_object_types": {
-      "allowed": [
-        "PROG",
-        "CLAS",
-        "INTF",
-        "FUGR",
-        "DEVC",
-        "TRAN",
-        "W3MI"
-      ]
+      "allowed": ["PROG", "CLAS", "INTF", "FUGR", "DEVC", "TRAN", "W3MI"]
     },
     "ambiguous_statement": true,
     "avoid_use": {
@@ -288,9 +299,7 @@
       "returning": "^R._.*$",
       "changing": "^C._.*$",
       "exporting": "^E._.*$",
-      "ignoreNames": [
-        "P_TASK"
-      ],
+      "ignoreNames": ["P_TASK"],
       "exclude": ["/json/"]
     },
     "mix_returning": true,
@@ -300,10 +309,10 @@
     },
     "no_public_attributes": false,
     "object_naming": {
-      "clas": "^ZC(L|X)\\_ABAPGIT\\_",
-      "intf": "^ZIF\\_ABAPGIT\\_",
-      "prog": "^ZABAPGIT",
-      "fugr": "^ZABAPGIT",
+      "clas": "^ZC(L|X)\\_GOL\\_",
+      "intf": "^ZIF\\_GOL\\_",
+      "prog": "^ZGOL",
+      "fugr": "^ZGOL",
       "tabl": "^Z",
       "ttyp": "^Z",
       "dtel": "^Z",
@@ -344,15 +353,7 @@
     },
     "parser_error": {},
     "preferred_compare_operator": {
-      "badOperators": [
-        "EQ",
-        "><",
-        "NE",
-        "GE",
-        "GT",
-        "LT",
-        "LE"
-      ]
+      "badOperators": ["EQ", "><", "NE", "GE", "GT", "LT", "LE"]
     },
     "release_idoc": true,
     "remove_descriptions": {
@@ -366,10 +367,7 @@
     },
     "short_case": {
       "length": 1,
-      "allow": [
-        "iv_action",
-        "sy"
-      ]
+      "allow": ["iv_action", "sy"]
     },
     "space_before_colon": true,
     "space_before_dot": {
