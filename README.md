@@ -1,18 +1,17 @@
-# unit-test-test
+# ABAP Game of Life
 
-[Node 16+](https://nodejs.org/en/download/) must be installed locally
+[![unit tests](https://github.com/miggi92/abap-gol/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/miggi92/abap-gol/actions/workflows/unit_tests.yml)
 
-Latest [vscode](https://code.visualstudio.com/)
+An abap game of life implementation.
 
-Running, `npm install && npm run unit`
+## Conway's Game of Life
 
-[SE80 style keybindings](https://github.com/larshp/editor_settings/blob/main/keybindings.json)
+[Wikipedia Article](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-ABAP code is 702, for higher version support do [automatic downport](https://rules.abaplint.org/downport/) first, note that this does not currently have source maps, so debugging will feel broken.
+## ABAPLint stats
 
-[![Video](https://img.youtube.com/vi/HusU0-A3Al8/0.jpg)](https://www.youtube.com/watch?v=HusU0-A3Al8)
+The abaplint stats can be viewed under: [abaplint.app](https://abaplint.app/stats/miggi92/abap-gol)
 
-## Recommendations
+## LICENSE
 
-* Start early
-* Design and build for testing
+For a detailed view see [LICENSE.md](./LICENSE.md)

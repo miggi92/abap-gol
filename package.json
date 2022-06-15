@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abapGit/abapGit.git"
+    "url": "github:miggi92/abap-gol"
   },
   "devDependencies": {
     "@abaplint/cli": "^2.90.10",
