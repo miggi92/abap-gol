@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@abaplint/cli": "^2.91.3",
-    "@abaplint/runtime": "^2.0.43",
+    "@abaplint/runtime": "^2.3.30",
     "@abaplint/transpiler-cli": "^2.0.43"
   }
 }
