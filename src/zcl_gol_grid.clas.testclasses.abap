@@ -79,7 +79,7 @@ CLASS ltcl_gol_grid IMPLEMENTATION.
 
     " checking col number
     cl_abap_unit_assert=>assert_equals(
-        exp     = 5                 " Data Object with Expected Type
+        exp     = 6                 " Data Object with Expected Type
         act     = lines( lt_components ) ).
   ENDMETHOD.
 
