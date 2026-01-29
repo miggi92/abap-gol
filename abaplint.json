@@ -356,11 +356,7 @@
       "badOperators": ["EQ", "><", "NE", "GE", "GT", "LT", "LE"]
     },
     "release_idoc": true,
-    "remove_descriptions": {
-      "ignoreWorkflow": false,
-      "ignoreExceptions": false,
-      "exclude": ["/json/"]
-    },
+    "remove_descriptions": false,
     "rfc_error_handling": false,
     "sequential_blank": {
       "lines": 4
