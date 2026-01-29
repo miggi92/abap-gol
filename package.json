@@ -1,4 +1,7 @@
 {
+  "name": "abap-gol",
+  "displayName": "ABAP Game of life",
+  "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -11,8 +14,9 @@
     "url": "github:miggi92/abap-gol"
   },
   "devDependencies": {
-    "@abaplint/cli": "^2.91.3",
-    "@abaplint/runtime": "^2.0.43",
-    "@abaplint/transpiler-cli": "^2.0.43"
-  }
+    "@abaplint/cli": "^2.115.18",
+    "@abaplint/runtime": "^2.12.26",
+    "@abaplint/transpiler-cli": "^2.12.26"
+  },
+  "packageManager": "pnpm@10.28.2"
 }
