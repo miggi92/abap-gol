@@ -176,7 +176,7 @@
     "check_abstract": true,
     "check_text_elements": true,
     "types_naming": {
-      "pattern": "^TY_.+$",
+      "pattern": "^.TY_.+$",
       "exclude": ["/json/"]
     },
     "7bit_ascii": {
