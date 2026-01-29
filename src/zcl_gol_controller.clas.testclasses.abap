@@ -1,8 +1,8 @@
 *"* use this source file for your ABAP unit tests
-CLASS lcl_test_gol DEFINITION DEFERRED.
-CLASS zcl_gol_controller DEFINITION LOCAL FRIENDS lcl_test_gol.
+CLASS ltcl_test_gol DEFINITION DEFERRED.
+CLASS zcl_gol_controller DEFINITION LOCAL FRIENDS ltcl_test_gol.
 
-CLASS lcl_test_gol DEFINITION
+CLASS ltcl_test_gol DEFINITION
   FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
 
   PRIVATE SECTION.
@@ -10,14 +10,14 @@ CLASS lcl_test_gol DEFINITION
              row TYPE i,
              col TYPE i,
            END OF mty_coord.
-    TYPES mtt_coords TYPE STANDARD TABLE OF mty_coord WITH EMPTY KEY.
+    TYPES mty_coords TYPE STANDARD TABLE OF mty_coord WITH EMPTY KEY.
 
     DATA mo_cut TYPE REF TO zcl_gol_controller. " Class Under Test
 
     METHODS setup.
 
     METHODS init_pattern
-      IMPORTING it_coords TYPE mtt_coords.
+      IMPORTING it_coords TYPE mty_coords.
 
     METHODS assert_row_pattern
       IMPORTING iv_row     TYPE i
@@ -30,7 +30,7 @@ CLASS lcl_test_gol DEFINITION
 ENDCLASS.
 
 
-CLASS lcl_test_gol IMPLEMENTATION.
+CLASS ltcl_test_gol IMPLEMENTATION.
   METHOD setup.
     " Initialisierung vor jedem Testlauf
     mo_cut = NEW #( iv_cols = 3
