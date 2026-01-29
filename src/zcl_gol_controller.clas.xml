@@ -17,6 +17,13 @@
      <DESCRIPT>Game of life controller</DESCRIPT>
     </SEOCLASSTX>
    </DESCRIPTIONS_CLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>START_GAME</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Start game</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

@@ -4,10 +4,17 @@ CLASS zcl_gol_cell DEFINITION
   CREATE PUBLIC.
 
   PUBLIC SECTION.
+    "! <p class="shorttext synchronized">Constructor</p>
+    "!
+    "! @parameter iv_x_coord | <p class="shorttext synchronized">X coordinate</p>
+    "! @parameter iv_y_coord | <p class="shorttext synchronized">Y coordinate</p>
     METHODS constructor
       IMPORTING iv_x_coord TYPE i
                 iv_y_coord TYPE i.
 
+    "! <p class="shorttext synchronized">Check if cell is alive</p>
+    "!
+    "! @parameter rv_is_alive | <p class="shorttext synchronized">Is alive?</p>
     METHODS is_alive
       RETURNING VALUE(rv_is_alive) TYPE abap_bool.
 
