@@ -97,10 +97,6 @@ CLASS zcl_gol_controller IMPLEMENTATION.
     LOOP AT <lt_new_gen> ASSIGNING FIELD-SYMBOL(<ls_row_new>).
       DATA(lv_row_idx) = sy-tabix.
 
-      " Performance: Zeilen-Pointer für Old Gen VORHER setzen
-      " Das spart uns tausende Lesezugriffe in der inneren Schleife.
-*      UNASSIGN: <ls_row_top>, <ls_row_mid>, <ls_row_bot>.
-
       " Pointer auf die alte Version dieser Zeile
       ASSIGN <lt_old_gen>[ lv_row_idx ] TO FIELD-SYMBOL(<ls_row_mid>).
 
@@ -212,11 +208,9 @@ CLASS zcl_gol_controller IMPLEMENTATION.
           ELSE.
             <lv_cell_new> = abap_false. " Unterbevölkerung oder Überbevölkerung
           ENDIF.
-        ELSE.
+        ELSEIF <lv_cell_old> = abap_false AND lv_neighbors = 3.
           " Zelle tot: Wird geboren bei genau 3 Nachbarn
-          IF lv_neighbors = 3.
-            <lv_cell_new> = abap_true.
-          ENDIF.
+          <lv_cell_new> = abap_true.
         ENDIF.
 
       ENDLOOP.

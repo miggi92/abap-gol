@@ -113,9 +113,8 @@ CLASS zcl_gol_alv IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD handle_user_command.
-    CASE e_salv_function.
-      WHEN 'NEXT_GEN'.
-        RAISE EVENT next_generation_requested.
-    ENDCASE.
+    IF e_salv_function = 'NEXT_GEN'.
+      RAISE EVENT next_generation_requested.
+    ENDIF.
   ENDMETHOD.
 ENDCLASS.
