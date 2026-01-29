@@ -58,7 +58,7 @@ CLASS zcl_gol_alv IMPLEMENTATION.
           cl_salv_table=>factory( IMPORTING r_salv_table = mo_salv
                                   CHANGING  t_table      = <lt_data> ).
 
-          mo_salv->get_columns( )->set_color_column( value = zif_gol_constants=>gc_color_col ).
+          mo_salv->get_columns( )->set_color_column( value = CONV #( zif_gol_constants=>gc_color_col ) ).
           mo_salv->get_functions( )->set_all( abap_false ).
           mo_salv->set_screen_status( report        = 'ZGOL_RUNNER'
                                       pfstatus      = 'ZPFSTATUS'
