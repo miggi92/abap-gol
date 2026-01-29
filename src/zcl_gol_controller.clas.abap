@@ -4,6 +4,10 @@ CLASS zcl_gol_controller DEFINITION
   CREATE PUBLIC.
 
   PUBLIC SECTION.
+    "! <p class="shorttext synchronized">Constructor</p>
+    "!
+    "! @parameter iv_cols | <p class="shorttext synchronized">Columns</p>
+    "! @parameter iv_rows | <p class="shorttext synchronized">Rows</p>
     METHODS constructor
       IMPORTING iv_cols TYPE i DEFAULT 10
                 iv_rows TYPE i DEFAULT 10.
@@ -16,13 +20,25 @@ CLASS zcl_gol_controller DEFINITION
     "!
     METHODS next_gen.
 
+    "! <p class="shorttext synchronized">On next generation event</p>
+    "!
     METHODS on_next_generation FOR EVENT next_generation_requested OF zcl_gol_alv.
 
+    "! <p class="shorttext synchronized">Set cell value</p>
+    "!
+    "! @parameter iv_row   | <p class="shorttext synchronized">Row</p>
+    "! @parameter iv_col   | <p class="shorttext synchronized">Column</p>
+    "! @parameter iv_value | <p class="shorttext synchronized">Value</p>
     METHODS set_cell_value
       IMPORTING iv_row   TYPE i
                 iv_col   TYPE i
                 iv_value TYPE abap_bool.
 
+    "! <p class="shorttext synchronized">Get cell state</p>
+    "!
+    "! @parameter iv_row   | <p class="shorttext synchronized">Row</p>
+    "! @parameter iv_col   | <p class="shorttext synchronized">Column</p>
+    "! @parameter rv_value | <p class="shorttext synchronized">Value</p>
     METHODS get_cell_state
       IMPORTING iv_row          TYPE i
                 iv_col          TYPE i
@@ -36,6 +52,8 @@ CLASS zcl_gol_controller DEFINITION
     DATA mo_table TYPE REF TO data.
     DATA mt_cells TYPE zif_gol_types=>gty_cells.
 
+    "! <p class="shorttext synchronized">Init table</p>
+    "!
     METHODS init_table.
 ENDCLASS.
 

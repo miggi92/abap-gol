@@ -6,14 +6,25 @@ CLASS zcl_gol_alv DEFINITION
   PUBLIC SECTION.
     EVENTS next_generation_requested.
 
+    "! <p class="shorttext synchronized">Constructor</p>
+    "!
+    "! @parameter io_table | <p class="shorttext synchronized">Table</p>
     METHODS constructor
       IMPORTING io_table TYPE REF TO data.
 
+    "! <p class="shorttext synchronized">Display</p>
+    "!
     METHODS display.
 
+    "! <p class="shorttext synchronized">Get alv object</p>
+    "!
+    "! @parameter ro_salv | <p class="shorttext synchronized">ALV Object</p>
     METHODS get_alv_object
       RETURNING VALUE(ro_salv) TYPE REF TO cl_salv_table.
 
+    "! <p class="shorttext synchronized">Handle user command</p>
+    "!
+    "! @parameter e_salv_function | <p class="shorttext synchronized">Usercommand</p>
     METHODS handle_user_command FOR EVENT added_function OF cl_salv_events_table
       IMPORTING e_salv_function.
 
@@ -23,6 +34,8 @@ CLASS zcl_gol_alv DEFINITION
     DATA mo_salv  TYPE REF TO cl_salv_table.
     DATA mo_table TYPE REF TO data.
 
+    "! <p class="shorttext synchronized">Set row colors</p>
+    "!
     METHODS set_row_colors.
 
 ENDCLASS.
