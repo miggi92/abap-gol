@@ -2,5 +2,34 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ]
+  ],
+  "packageRules": [
+        {
+            "matchManagers": [
+                "github-actions"
+            ],
+            "labels": [
+                "github-actions",
+                "dependencies"
+            ]
+        },
+        {
+            "description": "Group ABAP toolchain updates into one PR",
+            "matchManagers": [
+                "npm"
+            ],
+            "groupName": "abaplint toolchain",
+            "groupSlug": "abaplint-toolchain",
+            "labels": [
+                "abap",
+                "dependencies"
+            ],
+            "matchPackageNames": [
+                "/^@abaplint//"
+            ]
+        }
+    ],
+    "vulnerabilityAlerts": {
+        "enabled": true
+      }
 }
