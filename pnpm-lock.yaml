@@ -16,7 +16,7 @@ importers:
         version: 2.12.26
       '@abaplint/transpiler-cli':
         specifier: ^2.12.26
-        version: 2.12.26
+        version: 2.13.2
 
 packages:
 
@@ -28,8 +28,8 @@ packages:
   '@abaplint/runtime@2.12.26':
     resolution: {integrity: sha512-jIuymk5ogWsl9N5utI1Ingqm652WQGu0zPA2ZfZa8GzmboMrSeatz3lw0GoBPlheWpk11hTq05wWleV977F++w==}
 
-  '@abaplint/transpiler-cli@2.12.26':
-    resolution: {integrity: sha512-do8rmLaU/vbUcqfqqPLcSTaVHp1ruDuGgs419yjOhwLVoiC9WP76AxgEVhNjyRwCenk/phmoxBBQWVEv5CItNA==}
+  '@abaplint/transpiler-cli@2.13.2':
+    resolution: {integrity: sha512-ljek3erCI9sZXP5Cj9hu/3LWS0F+05wc9pBWChLWYaCH1zJv+6b4WjlOH/Inrd0b205eM6ECB8yPLPi1WNynew==}
     hasBin: true
 
   temporal-polyfill@0.3.0:
@@ -46,7 +46,7 @@ snapshots:
     dependencies:
       temporal-polyfill: 0.3.0
 
-  '@abaplint/transpiler-cli@2.12.26': {}
+  '@abaplint/transpiler-cli@2.13.2': {}
 
   temporal-polyfill@0.3.0:
     dependencies:
