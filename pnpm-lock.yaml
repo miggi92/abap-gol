@@ -10,46 +10,52 @@ importers:
     devDependencies:
       '@abaplint/cli':
         specifier: ^2.115.18
-        version: 2.118.7
+        version: 2.120.52
       '@abaplint/runtime':
         specifier: ^2.12.26
-        version: 2.13.2
+        version: 2.13.87
       '@abaplint/transpiler-cli':
         specifier: ^2.12.26
-        version: 2.13.2
+        version: 2.13.87
 
 packages:
 
-  '@abaplint/cli@2.118.7':
-    resolution: {integrity: sha512-ZSiAQDM2GxGZFXaNUfE8IgAII9ltwuxGb0bK4tBWTq60QDCHsJs/d2qy7aNpwSE4uT1M/E7o0LzFer2C0Evc1g==}
-    engines: {node: '>=18.0.0'}
+  '@abaplint/cli@2.120.52':
+    resolution: {integrity: sha512-jqHlUxC20jT6+OBMnRI6BElIYhymTvPQcIHAK8cndv+9WVbpRnHVAHyqkeuJznUTXFFKcKr5N7R8evQj4wLvEQ==}
+    engines: {node: '>=22.0.0'}
     hasBin: true
 
-  '@abaplint/runtime@2.13.2':
-    resolution: {integrity: sha512-S+xYfzxRf4wTd46lb1XHdrEApS/KOjUrP8OfYqPPyRKwwsf45uc9wdLPHVF+QOi/XR0O5uI0PGjVvuTDHwSSjA==}
+  '@abaplint/runtime@2.13.87':
+    resolution: {integrity: sha512-j5O+xxSINTNTID36SAgH/J30NA6KqWaqb+jD/mCO5LE5I6I2h52JMBtdLAKITzl+UhgL85cR6VKwJgLizT+QgA==}
 
-  '@abaplint/transpiler-cli@2.13.2':
-    resolution: {integrity: sha512-ljek3erCI9sZXP5Cj9hu/3LWS0F+05wc9pBWChLWYaCH1zJv+6b4WjlOH/Inrd0b205eM6ECB8yPLPi1WNynew==}
+  '@abaplint/transpiler-cli@2.13.87':
+    resolution: {integrity: sha512-eUB2WsR0ZCRSzy+HeGubvzp0Iwl3i+IvVy6EbvksCumobfdQQq5D/YukdrnC7wMSP+rC9+B57XIbYHy3LbW2gQ==}
     hasBin: true
 
-  temporal-polyfill@0.3.2:
-    resolution: {integrity: sha512-TzHthD/heRK947GNiSu3Y5gSPpeUDH34+LESnfsq8bqpFhsB79HFBX8+Z834IVX68P3EUyRPZK5bL/1fh437Eg==}
+  temporal-polyfill@1.0.5:
+    resolution: {integrity: sha512-+H/mmY74i6wXCMcjIhGuSnODcyZnc4eois2myhOyX0UqRAKNXQY5m9iB1en5jQ/n4SXtjLXo1ElBI5bmn8tZwQ==}
 
-  temporal-spec@0.3.1:
-    resolution: {integrity: sha512-B4TUhezh9knfSIMwt7RVggApDRJZo73uZdj8AacL2mZ8RP5KtLianh2MXxL06GN9ESYiIsiuoLQhgVfwe55Yhw==}
+  temporal-spec@1.0.1:
+    resolution: {integrity: sha512-wxVoanmDeavXie1vu2JaQ3WIc3JZnWAOYFBsJyATaVsXsycKYUflGsyBmrRSnoCpZJpwPyr38VpgSUlQ8CbFxg==}
+
+  temporal-utils@1.0.3:
+    resolution: {integrity: sha512-9jbTSX3HvkOWvDpNpFzwX/d1mkCrgQgwLmVTOEiuocZGKHsrQJtttGZFmybJ2zYP5zCSZuU5ZyeS8+eOEPABiQ==}
 
 snapshots:
 
-  '@abaplint/cli@2.118.7': {}
+  '@abaplint/cli@2.120.52': {}
 
-  '@abaplint/runtime@2.13.2':
+  '@abaplint/runtime@2.13.87':
     dependencies:
-      temporal-polyfill: 0.3.2
+      temporal-polyfill: 1.0.5
 
-  '@abaplint/transpiler-cli@2.13.2': {}
+  '@abaplint/transpiler-cli@2.13.87': {}
 
-  temporal-polyfill@0.3.2:
+  temporal-polyfill@1.0.5:
     dependencies:
-      temporal-spec: 0.3.1
+      temporal-spec: 1.0.1
+      temporal-utils: 1.0.3
 
-  temporal-spec@0.3.1: {}
+  temporal-spec@1.0.1: {}
+
+  temporal-utils@1.0.3: {}
